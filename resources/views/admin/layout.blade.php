@@ -79,7 +79,7 @@
                     Store Settings
                 </a>
 
-                <a href="http://localhost:3000" target="_blank" class="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-saffron-950 font-bold ml-2 shadow-sm flex items-center gap-1.5">
+                <a href="{{ env('STOREFRONT_URL', request()->getHost() === 'localhost' || request()->getHost() === '127.0.0.1' ? 'http://localhost:3000' : 'https://sweet-shop-tan.vercel.app') }}" target="_blank" class="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-saffron-950 font-bold ml-2 shadow-sm flex items-center gap-1.5">
                     <span>View Customer Site</span>
                     <span class="text-[10px]">↗</span>
                 </a>

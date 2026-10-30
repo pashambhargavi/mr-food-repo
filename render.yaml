@@ -21,3 +21,5 @@ services:
         value: database
       - key: CACHE_STORE
         value: file
+      - key: STOREFRONT_URL
+        value: "https://sweet-shop-tan.vercel.app"
