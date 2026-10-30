@@ -23,6 +23,9 @@ if [[ -z "$APP_KEY" || "$APP_KEY" != base64:* ]]; then
     export APP_KEY="base64:lZCNY3+tUGbHiANsbWPlao8Q7W7jZKdZ3Yfx4y7Ds+g="
 fi
 
+# Ensure default Indian Standard Timezone (IST)
+export APP_TIMEZONE="${APP_TIMEZONE:-Asia/Kolkata}"
+
 # Clear old compiled caches
 php artisan config:clear || true
 php artisan route:clear || true

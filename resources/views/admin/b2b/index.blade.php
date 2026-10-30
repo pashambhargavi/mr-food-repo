@@ -73,7 +73,7 @@
                         @foreach($inquiries as $inq)
                             <tr class="hover:bg-amber-50/30 transition-colors">
                                 <td class="py-3.5 px-4 font-mono text-stone-400 whitespace-nowrap">
-                                    {{ $inq->created_at->format('d M Y, h:i A') }}
+                                    {{ $inq->created_at->timezone('Asia/Kolkata')->format('d M Y, h:i A') }}
                                 </td>
 
                                 <td class="py-3.5 px-4">

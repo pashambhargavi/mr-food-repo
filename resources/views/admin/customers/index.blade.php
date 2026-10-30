@@ -102,7 +102,7 @@
                                 </span>
                             </td>
                             <td class="px-4 py-4 text-stone-500 text-[11px]">
-                                {{ \Carbon\Carbon::parse($c->last_order_date)->format('d M Y, h:i A') }}
+                                {{ \Carbon\Carbon::parse($c->last_order_date)->timezone('Asia/Kolkata')->format('d M Y, h:i A') }}
                             </td>
                             <td class="px-5 py-4 text-right">
                                 <a 

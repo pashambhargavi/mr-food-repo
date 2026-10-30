@@ -92,7 +92,7 @@
                         <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase {{ $ord->fulfilment_type === 'delivery' ? 'bg-amber-100 text-amber-900' : 'bg-blue-100 text-blue-900' }}">
                             {{ $ord->fulfilment_type }}
                         </span>
-                        <span class="text-stone-400 text-[11px]">{{ $ord->created_at->format('d M, h:i A') }}</span>
+                        <span class="text-stone-400 text-[11px]">{{ $ord->created_at->timezone('Asia/Kolkata')->format('d M, h:i A') }}</span>
                     </div>
 
                     <div class="text-stone-700">

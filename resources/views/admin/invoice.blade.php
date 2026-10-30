@@ -44,7 +44,7 @@
 
     <div class="border-t border-b py-1 my-2">
         <div><strong>Order:</strong> {{ $order->order_number }}</div>
-        <div><strong>Date:</strong> {{ $order->created_at->format('d/m/Y h:i A') }}</div>
+        <div><strong>Date:</strong> {{ $order->created_at->timezone('Asia/Kolkata')->format('d/m/Y h:i A') }}</div>
         <div><strong>Customer:</strong> {{ $order->customer_name }} ({{ $order->customer_phone }})</div>
         <div><strong>Type:</strong> {{ strtoupper($order->fulfilment_type) }}</div>
         @if($order->fulfilment_type === 'pickup')
