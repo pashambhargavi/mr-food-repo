@@ -12,12 +12,12 @@ services:
       - key: APP_DEBUG
         value: "false"
       - key: APP_KEY
-        generateValue: true
+        value: "base64:lZCNY3+tUGbHiANsbWPlao8Q7W7jZKdZ3Yfx4y7Ds+g="
       - key: DB_CONNECTION
         value: sqlite
       - key: DB_DATABASE
         value: /var/www/html/database/database.sqlite
       - key: SESSION_DRIVER
-        value: cookie
+        value: database
       - key: CACHE_STORE
         value: file
