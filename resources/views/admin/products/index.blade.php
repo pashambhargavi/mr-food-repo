@@ -44,9 +44,6 @@
                                 </span>
                             @endif
                         </div>
-                        <p class="text-xs text-stone-500 font-serif truncate">
-                            {{ $prod->name_te }} • {{ $prod->name_hi }}
-                        </p>
                         <div class="flex items-center gap-2 text-[11px] text-stone-400">
                             <span class="text-saffron-900 font-semibold bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
                                 {{ $prod->category->name_en ?? 'Mithai' }}

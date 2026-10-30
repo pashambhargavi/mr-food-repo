@@ -13,15 +13,10 @@
     <form method="POST" action="{{ route('admin.settings.update') }}" class="bg-white rounded-2xl border border-stone-200 shadow-sm p-6 space-y-6 text-xs">
         @csrf
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
-                <label class="font-bold text-stone-700 block mb-1">Shop Name (English)</label>
+                <label class="font-bold text-stone-700 block mb-1">Shop Name</label>
                 <input type="text" name="shop_name" value="{{ $settings->shop_name }}" class="w-full px-3 py-2 rounded-xl border border-stone-300" />
-            </div>
-
-            <div>
-                <label class="font-bold text-stone-700 block mb-1">Shop Name (Telugu)</label>
-                <input type="text" name="shop_name_te" value="{{ $settings->shop_name_te }}" class="w-full px-3 py-2 rounded-xl border border-stone-300 font-serif" />
             </div>
 
             <div>

@@ -31,8 +31,8 @@
     <div class="max-w-md w-full bg-white rounded-3xl shadow-2xl border border-saffron-200/50 p-8 space-y-6">
         
         <div class="text-center space-y-2">
-            <div class="w-16 h-16 rounded-full bg-saffron-600 text-white flex items-center justify-center font-serif font-black text-3xl mx-auto shadow-lg border-2 border-amber-300">
-                ఆ
+            <div class="w-16 h-16 rounded-full bg-saffron-600 text-white flex items-center justify-center font-serif font-black text-2xl mx-auto shadow-lg border-2 border-amber-300">
+                AS
             </div>
             <h1 class="text-2xl font-serif font-bold text-saffron-950">Anandam Sweets</h1>
             <p class="text-xs text-stone-500 uppercase tracking-widest font-semibold">Store Management Portal</p>

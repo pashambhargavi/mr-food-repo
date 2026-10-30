@@ -33,63 +33,21 @@
         <div class="space-y-4">
             <div class="flex items-center justify-between border-b border-stone-100 pb-2">
                 <h2 class="text-sm font-bold font-serif text-saffron-950 uppercase tracking-wider">
-                    1. Product Names & Category
+                    1. Product Name & Category
                 </h2>
-                <button 
-                    type="button" 
-                    onclick="triggerAutoTranslate()"
-                    class="px-3 py-1 rounded-full bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold text-[11px] flex items-center gap-1.5 transition-colors shadow-sm"
-                >
-                    <span>✨ Auto-Translate Telugu & Hindi</span>
-                </button>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div>
-                    <div class="flex items-center justify-between mb-1">
-                        <label class="font-bold text-stone-700 block">Sweet Name (English) *</label>
-                        <span class="text-[10px] text-saffron-700 font-semibold">Type here</span>
-                    </div>
-                    <input 
-                        type="text" 
-                        id="name_en"
-                        name="name_en" 
-                        required 
-                        value="{{ old('name_en') }}" 
-                        placeholder="e.g. Royal Silver Kaju Katli" 
-                        class="w-full px-3 py-2 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-saffron-600/30 text-xs font-semibold"
-                        oninput="debounceTranslate()"
-                        onblur="triggerAutoTranslate()"
-                    />
-                </div>
-                <div>
-                    <div class="flex items-center justify-between mb-1">
-                        <label class="font-bold text-stone-700 block">Sweet Name (Telugu - తెలుగు)</label>
-                        <span id="badge_te" class="text-[10px] text-emerald-700 font-bold hidden">✨ Auto-filled</span>
-                    </div>
-                    <input 
-                        type="text" 
-                        id="name_te"
-                        name="name_te" 
-                        value="{{ old('name_te') }}" 
-                        placeholder="ఉదా: రాయల్ కాజూ కత్లీ" 
-                        class="w-full px-3 py-2 rounded-xl border border-stone-300 font-serif text-xs bg-amber-50/30" 
-                    />
-                </div>
-                <div>
-                    <div class="flex items-center justify-between mb-1">
-                        <label class="font-bold text-stone-700 block">Sweet Name (Hindi - हिन्दी)</label>
-                        <span id="badge_hi" class="text-[10px] text-emerald-700 font-bold hidden">✨ Auto-filled</span>
-                    </div>
-                    <input 
-                        type="text" 
-                        id="name_hi"
-                        name="name_hi" 
-                        value="{{ old('name_hi') }}" 
-                        placeholder="उदा: शाही काजू कतली" 
-                        class="w-full px-3 py-2 rounded-xl border border-stone-300 font-serif text-xs bg-amber-50/30" 
-                    />
-                </div>
+            <div>
+                <label class="font-bold text-stone-700 block mb-1">Sweet Name *</label>
+                <input 
+                    type="text" 
+                    id="name_en"
+                    name="name_en" 
+                    required 
+                    value="{{ old('name_en') }}" 
+                    placeholder="e.g. Royal Silver Kaju Katli" 
+                    class="w-full px-3 py-2 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-saffron-600/30 text-xs font-semibold"
+                />
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -98,7 +56,7 @@
                     <select name="category_id" required class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white font-medium">
                         @foreach($categories as $cat)
                             <option value="{{ $cat->id }}" {{ old('category_id') == $cat->id ? 'selected' : '' }}>
-                                {{ $cat->name_en }} ({{ $cat->name_te }})
+                                {{ $cat->name_en }}
                             </option>
                         @endforeach
                     </select>
@@ -156,31 +114,7 @@
                     rows="2" 
                     placeholder="Rich melt-in-the-mouth texture made from finely ground cashews and pure ghee..." 
                     class="w-full px-3 py-2 rounded-xl border border-stone-300 text-xs"
-                    onblur="translateDescription()"
                 >{{ old('description_en') }}</textarea>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                    <label class="font-bold text-stone-700 block mb-1">Telugu Description (తెలుగు)</label>
-                    <textarea 
-                        id="description_te"
-                        name="description_te" 
-                        rows="2" 
-                        placeholder="స్వచ్ఛమైన ఆవు నెయ్యితో సాంప్రదాయ పద్ధతిలో తయారుచేసిన రుచికరమైన మిఠాయి..." 
-                        class="w-full px-3 py-2 rounded-xl border border-stone-300 font-serif text-xs bg-amber-50/30"
-                    >{{ old('description_te') }}</textarea>
-                </div>
-                <div>
-                    <label class="font-bold text-stone-700 block mb-1">Hindi Description (हिन्दी)</label>
-                    <textarea 
-                        id="description_hi"
-                        name="description_hi" 
-                        rows="2" 
-                        placeholder="शुद्ध गाय के घी और उत्तम मेवों से तैयार की गई पारंपरिक स्वादिष्ट मिठाई..." 
-                        class="w-full px-3 py-2 rounded-xl border border-stone-300 font-serif text-xs bg-amber-50/30"
-                    >{{ old('description_hi') }}</textarea>
-                </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">

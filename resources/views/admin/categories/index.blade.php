@@ -38,7 +38,6 @@
                         @endif
                     </div>
 
-                    <p class="text-[11px] text-amber-800 font-serif truncate">{{ $cat->name_te }}</p>
                     <p class="text-[10px] text-stone-400 font-mono mt-0.5 truncate">Slug: ?cat={{ $cat->slug }}</p>
 
                     <div class="flex items-center justify-between mt-2 pt-2 border-t border-stone-100 text-xs">
@@ -47,7 +46,7 @@
                         </span>
 
                         <div class="flex items-center gap-2">
-                            <a href="http://localhost:3000/catalog?cat={{ $cat->slug }}" target="_blank" class="text-saffron-700 hover:text-saffron-900 font-bold text-[11px]">
+                            <a href="{{ env('STOREFRONT_URL', 'https://sweet-shop-tan.vercel.app') }}/catalog?cat={{ $cat->slug }}" target="_blank" class="text-saffron-700 hover:text-saffron-900 font-bold text-[11px]">
                                 Preview ↗
                             </a>
 
@@ -79,19 +78,8 @@
             @csrf
 
             <div>
-                <label class="font-bold text-stone-700 block mb-1">Category Name (English) *</label>
-                <input type="text" name="name_en" required placeholder="e.g. Traditional Andhra Sweets" class="w-full px-3 py-2 rounded-xl border border-stone-300" />
-            </div>
-
-            <div class="grid grid-cols-2 gap-3">
-                <div>
-                    <label class="font-bold text-stone-700 block mb-1">Telugu Name (తెలుగు)</label>
-                    <input type="text" name="name_te" placeholder="ఆంధ్రా సాంప్రదాయ మిఠాయిలు" class="w-full px-3 py-2 rounded-xl border border-stone-300 font-serif" />
-                </div>
-                <div>
-                    <label class="font-bold text-stone-700 block mb-1">Hindi Name (हिन्दी)</label>
-                    <input type="text" name="name_hi" placeholder="पारंपरिक आंध्र मिठाई" class="w-full px-3 py-2 rounded-xl border border-stone-300 font-serif" />
-                </div>
+                <label class="font-bold text-stone-700 block mb-1">Category Name *</label>
+                <input type="text" name="name_en" required placeholder="e.g. Traditional Cashew Sweets" class="w-full px-3 py-2 rounded-xl border border-stone-300" />
             </div>
 
             <div>
